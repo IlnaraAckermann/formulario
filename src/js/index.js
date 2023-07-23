@@ -1,42 +1,53 @@
 const form = document.querySelector('form')
 const formfields = form.querySelectorAll('input, textarea');
+const emailInput = form.querySelector('#email');
+console.log(emailInput)
+
+
 
 formfields.forEach((e) => {
-    e.addEventListener('input', () => {
-        hasText(e);
-    })
+  e.addEventListener('input', () => {
+    hasText(e);
+  })
 })
 
 
 function hasText(e) {
-   if (e.value !=='') {
+  if (e.value !== '') {
     e.classList.add('filled')
     e.classList.remove('notValidated')
-   } else {
+  } else {
     e.classList.remove('filled')
-   }
+  }
 }
 
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    let isFormValid = true;
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+  let isFormValid = true;
+
+
   formfields.forEach((field) => {
-    if (field.value === '') {
+    if (field.id === 'email' && !validarEmail(field.value)) {
+      isFormValid = false;
+      field.classList.add('notValidated');
+    } else if (field.value === '') {
       isFormValid = false;
       field.classList.add('notValidated');
     } else {
       field.classList.remove('notValidated');
     }
   });
-    if (isFormValid) {
-        form.submit();
-        form.reset();
-        formfields.forEach((e) => {
-            e.classList.remove('filled')
-        })
-    }
-  });
+
+
+  if (isFormValid) {
+    form.submit();
+    form.reset();
+    formfields.forEach((e) => {
+      e.classList.remove('filled')
+    })
+  }
+});
 
 
 function formatarTelefone() {
@@ -55,19 +66,9 @@ function formatarTelefone() {
   telefoneInput.value = telefone;
 }
 
-
-
-// function validarEmail() {
-//   const emailInput = document.getElementById('email');
-//   const email = emailInput.value;
-
-//   const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-//   if (regex.test(email)) {
-//    return true;
-//   } else {
-//    return false;
-//   }
-// }
+function validarEmail(email) {
+  const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return regex.test(email);
+}
 
 
