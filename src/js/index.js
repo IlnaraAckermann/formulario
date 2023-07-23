@@ -39,7 +39,6 @@ form.addEventListener('submit', function(event) {
   });
 
 
-
 function formatarTelefone() {
   const telefoneInput = document.getElementById('telefone');
   let telefone = telefoneInput.value;
@@ -55,4 +54,20 @@ function formatarTelefone() {
   }
   telefoneInput.value = telefone;
 }
+
+
+
+// function validarEmail() {
+//   const emailInput = document.getElementById('email');
+//   const email = emailInput.value;
+
+//   const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+//   if (regex.test(email)) {
+//    return true;
+//   } else {
+//    return false;
+//   }
+// }
+
 
