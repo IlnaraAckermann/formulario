@@ -1,0 +1,139 @@
+/*** Simple reset ***/
+:root {
+    font-size: 62.5%;
+}
+
+button {
+    all: initial;
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*** fim reset **/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+body {
+    background: url(../img/bg-repeat.jpg) center center repeat no-repeat;
+    background-size: contain;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 1.78rem;
+    font-weight: 900;
+}
+
+.mensagem {
+    width: 34rem;
+    color: #FFF;
+    margin-bottom: 2rem;
+}
+
+.mensagem p {
+    margin: 1rem 0;
+}
+
+p,
+legend {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+legend {
+    align-self: self-start;
+}
+
+form {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+input {
+    display: block;
+    height: 3.5rem;
+    margin-top: 1.5rem;
+}
+
+input:first-of-type {
+    margin-top: 0;
+}
+
+textarea {
+    height: 10rem;
+    margin-bottom: .7rem;
+    margin-top: 1.5rem;
+}
+
+input,
+textarea {
+    padding: 1rem;
+    /* color: #A8A8A8; */
+    /* font-weight: 700;     */
+    font-weight: 400;    
+    font-size: 1.5rem;
+    border: .1rem solid #000;
+    border-radius: .5rem;
+    width: 30rem;
+    resize: none;
+}
+
+input::placeholder,
+textarea::placeholder {    
+    color: #A8A8A8;
+    font-weight: 700;    
+}
+
+button {
+    margin-top: 2rem;
+    text-align: center;
+    width:30rem;
+    height: 4rem;
+    background-color: #3CCC87;
+    color: #FFF;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: .5rem;
+}
+
+.notValidated {
+    border: .1rem solid #F52E2E;
+}
+
+.notValidated + p{
+    color: #F52E2E;
+    font-size: .8rem;
+    font-weight: 400;
+    display: block;
+}
+
+form > p {
+    display: none;
+    align-self: self-start;
+}
+
+.filled {
+    border: 1px solid #00C22B;
+}
+
