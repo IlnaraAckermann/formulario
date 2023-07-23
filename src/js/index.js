@@ -37,3 +37,22 @@ form.addEventListener('submit', function(event) {
         })
     }
   });
+
+
+
+function formatarTelefone() {
+  const telefoneInput = document.getElementById('telefone');
+  let telefone = telefoneInput.value;
+
+  telefone = telefone.replace(/\D/g, ''); // Remove caracteres não numéricos
+
+  if (telefone.length === 11) {
+    telefone = telefone.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+  } else if (telefone.length === 10) {
+    telefone = telefone.replace(/^(\d{2})(\d{4})(\d{4})$/, '($1) $2-$3');
+  } else {
+    // Caso o telefone tenha mais ou menos dígitos, não aplicar a máscara
+  }
+  telefoneInput.value = telefone;
+}
+
